@@ -1,5 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:grocery_kart/screens/feeds.dart';
+import 'package:grocery_kart/services/global_method.dart';
 import 'package:grocery_kart/services/utils.dart';
 import 'package:grocery_kart/widgets/feed_widget.dart';
 import 'package:grocery_kart/widgets/main_item_widget.dart';
@@ -21,6 +23,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     Size size = Utils(context).screenSize;
+    GlobalMethods globalMethods = GlobalMethods();
     return Scaffold(
         body: SingleChildScrollView(
           child: Column(
@@ -80,7 +83,10 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.bold),
                 ),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      globalMethods.navigateTo(
+                          ctx: context, routeName: FeedsScreen.routeName);
+                    },
                     child: const Text(
                       'Browse All',
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

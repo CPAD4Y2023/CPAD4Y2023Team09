@@ -67,7 +67,14 @@ class _FeedWidgetState extends State<FeedWidget> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    PriceWidget(),
+                    Flexible(
+                      child: PriceWidget(
+                        isOffer: false,
+                        price: 25,
+                        offerPrice: 25,
+                        textPrice: _quantityController.text,
+                      ),
+                    ),
                     SizedBox(
                       width: 10,
                     ),
@@ -76,11 +83,17 @@ class _FeedWidgetState extends State<FeedWidget> {
                       children: [
                         Flexible(
                             child: TextFormField(
+                              
                           controller: _quantityController,
                           key: const ValueKey('10'),
                           keyboardType: TextInputType.number,
                           maxLines: 1,
                           enabled: true,
+                          onChanged: (value) {
+                            setState(() {
+                              
+                            });
+                          },
                           inputFormatters: [
                             FilteringTextInputFormatter.allow(RegExp('[0-9.]')),
                           ],
@@ -90,7 +103,7 @@ class _FeedWidgetState extends State<FeedWidget> {
                         ),
                         FittedBox(
                           child: const Text(
-                            '1Kg',
+                            'Kg',
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           ),

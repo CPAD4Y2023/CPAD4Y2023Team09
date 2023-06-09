@@ -53,7 +53,12 @@ class _MainItemWidgetState extends State<MainItemWidget> {
                   ],),
                 ],
               ),
-              const PriceWidget(),
+              const PriceWidget(
+                price: 30,
+                offerPrice: 25,
+                textPrice: '1',
+                isOffer: true,
+              ),
               const SizedBox(height: 5,),
               const Text('Product Title', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
             ]),
