@@ -95,7 +95,7 @@ class _FeedWidgetState extends State<FeedWidget> {
                             });
                           },
                           inputFormatters: [
-                            FilteringTextInputFormatter.allow(RegExp('[0-9.]')),
+                            FilteringTextInputFormatter.allow(RegExp('[0-9]')),
                           ],
                         )),
                         SizedBox(
